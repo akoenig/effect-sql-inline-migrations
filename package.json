@@ -1,0 +1,22 @@
+{
+  "name": "@akoenig/effect-sql-inline-migrations",
+  "version": "1.0.0",
+  "author": "André König <hi@andrekoenig.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.11.1",
+  "scripts": {
+    "scratchpad": "tsx scratchpad/mod.ts"
+  },
+  "peerDependencies": {
+    "@effect/sql": "^0.37.9",
+    "effect": "^3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@effect/language-service": "^0.19.0",
+    "@effect/platform-node": "^0.85.8",
+    "@effect/sql-libsql": "^0.27.9",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
