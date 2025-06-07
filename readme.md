@@ -10,6 +10,12 @@ For example, consider a use case where each tenant has its own database. When ro
 
 By inlining the migrations (and therefore not accessing the filesystem), it is possible to execute the migrations in 2 ms. Adding 2 ms to every request sounds acceptable. (Disclaimer: I was using SQLite for the benchmark).
 
+## Installation
+
+```sh
+pnpm add @akoenig/effect-sql-inline-migrations
+```
+
 ## Usage
 
 This loader is a drop-in replacement. Simply swap the `⁠fromFileSystem` loader that comes with the respective `⁠@effect/sql` database adapter for the `⁠fromArray` loader included in this package.

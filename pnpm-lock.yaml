@@ -15,6 +15,9 @@ importers:
         specifier: ^3
         version: 3.16.4
     devDependencies:
+      '@akoenig/effect-sql-inline-migrations':
+        specifier: ^1.0.0
+        version: 1.0.0(@effect/sql@0.37.9(@effect/experimental@0.48.9(@effect/platform@0.84.8(effect@3.16.4))(effect@3.16.4))(@effect/platform@0.84.8(effect@3.16.4))(effect@3.16.4))(effect@3.16.4)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -35,6 +38,12 @@ importers:
         version: 5.8.3
 
 packages:
+
+  '@akoenig/effect-sql-inline-migrations@1.0.0':
+    resolution: {integrity: sha512-IEXuBqFdPx3poVsdOwF8b6zteV4qIVJIkrBWBQi1Z8NS8f86rWqNiZYEtJW/cfHRaoLpUP86XP/VTrFjFvdCnw==}
+    peerDependencies:
+      '@effect/sql': ^0.37.9
+      effect: ^3
 
   '@biomejs/biome@1.9.4':
     resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
@@ -660,6 +669,11 @@ packages:
         optional: true
 
 snapshots:
+
+  '@akoenig/effect-sql-inline-migrations@1.0.0(@effect/sql@0.37.9(@effect/experimental@0.48.9(@effect/platform@0.84.8(effect@3.16.4))(effect@3.16.4))(@effect/platform@0.84.8(effect@3.16.4))(effect@3.16.4))(effect@3.16.4)':
+    dependencies:
+      '@effect/sql': 0.37.9(@effect/experimental@0.48.9(@effect/platform@0.84.8(effect@3.16.4))(effect@3.16.4))(@effect/platform@0.84.8(effect@3.16.4))(effect@3.16.4)
+      effect: 3.16.4
 
   '@biomejs/biome@1.9.4':
     optionalDependencies:

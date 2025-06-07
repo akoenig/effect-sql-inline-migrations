@@ -1,6 +1,6 @@
 {
   "name": "@akoenig/effect-sql-inline-migrations",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "André König <hi@andrekoenig.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.11.1",
@@ -19,6 +19,7 @@
     "effect": "^3"
   },
   "devDependencies": {
+    "@akoenig/effect-sql-inline-migrations": "^1.0.0",
     "@biomejs/biome": "1.9.4",
     "@effect/language-service": "^0.19.0",
     "@effect/platform-node": "^0.85.8",
