@@ -19,7 +19,8 @@ import { Config, Effect, Layer, pipe } from "effect";
 import { LibsqlClient, LibsqlMigrator } from "@effect/sql-libsql";
 import { NodeContext, NodeRuntime } from "@effect/platform-node";
 import { SqlClient } from "@effect/sql";
-import { fromArray } from "src/mod.js";
+
+import { fromArray } from "@akoenig/effect-sql-inline-migrations";
 
 const SqlLive = LibsqlClient.layerConfig({
   url: Config.succeed("file:scratchpad.db"),
