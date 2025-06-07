@@ -8,4 +8,4 @@ flake.lock
 flake.nix
 pnpm-lock.yaml
 *.db
-tsconfig.json
+tsconfig.*
