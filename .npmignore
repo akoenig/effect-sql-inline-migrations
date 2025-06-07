@@ -1,0 +1,11 @@
+.direnv
+.vscode
+scratchpad
+.envrc
+.gitignore
+biome.json
+flake.lock
+flake.nix
+pnpm-lock.yaml
+*.db
+tsconfig.json

@@ -5,6 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@10.11.1",
   "scripts": {
+    "build": "tsc",
     "scratchpad": "tsx scratchpad/mod.ts"
   },
   "peerDependencies": {

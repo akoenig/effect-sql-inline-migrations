@@ -1,4 +1,5 @@
 {
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "strict": true,
     "exactOptionalPropertyTypes": true,
@@ -35,6 +36,8 @@
     "module": "NodeNext",
     "incremental": true,
     "removeComments": false,
-    "plugins": [{ "name": "@effect/language-service" }]
+    "plugins": [{ "name": "@effect/language-service" }],
+    "rootDir": "src",
+    "outDir": "dist"
   }
 }
