@@ -1,9 +1,20 @@
 import type { Loader, ResolvedMigration } from "@effect/sql/Migrator";
-import type { Migrations } from "./migration.js";
+import type * as Sql from "@effect/sql";
+import type { SqlError } from "@effect/sql/SqlError";
 
 import * as Option from "effect/Option";
-
 import { Effect } from "effect";
+
+interface Migration {
+  readonly name: string;
+  readonly effect: Effect.Effect<
+    readonly Sql.SqlConnection.Row[],
+    SqlError,
+    Sql.SqlClient.SqlClient
+  >;
+}
+
+export type Migrations = Migration[];
 
 export const fromArray = (migrations: Migrations): Loader => {
   return Effect.succeed(
@@ -23,5 +34,3 @@ export const fromArray = (migrations: Migrations): Loader => {
       .sort(([a], [b]) => a - b),
   );
 };
-
-export type { Migrations };
