@@ -8,6 +8,12 @@
     "build": "tsc",
     "scratchpad": "tsx scratchpad/mod.ts"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/mod.d.ts",
+      "default": "./dist/mod.js"
+    }
+  },
   "peerDependencies": {
     "@effect/sql": "^0.37.9",
     "effect": "^3"

@@ -1,20 +1,20 @@
-# Effect SQL Inline Migrations
+## Effect SQL Inline Migrations
 
-A migration loader that doesn't consult the filesystem for fetching your database migrations.
+A migration loader that doesn't consult the filesystem when fetching database migrations.
 
 ## When is this useful?
 
-Whenever you have a use case where the filesystem is too slow.
+This is useful whenever you have a use case where filesystem access is too slow when running migrations.
 
-For example, I had a use case where each tenant has its own SQLite database. Now, when I'm rolling out a new release, I have to ensure that the migrations get applied for every tenant. Doing that from the outside is too cumbersome and error-prone. I decided to perform the migration on each request that hits the respective tenant. Sounds crazy, right? Well, when utilizing the filesystem, it would be crazy, yes. I encountered that using the built-in [filesystem loader](https://github.com/Effect-TS/effect/tree/main/packages/sql#migrations) adds around 120 ms to every request. This would be unacceptable for sure.
+For example, consider a use case where each tenant has its own database. When rolling out a new release, you need to ensure that migrations are applied for every tenant. Doing this from the outside can be too cumbersome and error-prone, so you might decide to perform the migration on each request that hits the respective tenant. Sounds crazy, right? Well, when utilizing the filesystem, it would be crazy, yes. The built-in filesystem loader can add around 50 ms to every request, which would be unacceptable in most scenarios.
 
-By inlining the migrations (and therefore not reaching for the filesystem), I was able to execute the migrations in 2 ms. So, in my opinion, adding 2 ms to every request sounds acceptable to me.
+By inlining the migrations (and therefore not accessing the filesystem), it is possible to execute the migrations in 2 ms. Adding 2 ms to every request sounds acceptable. (Disclaimer: I was using SQLite for the benchmark).
 
 ## Usage
 
-Using this loader is a drop-in replacement. You just swap the `fromFileSystem` loader that comes with the respective `@effect/sql` database adapter for the `fromArray` loader that is included in this very package.
+This loader is a drop-in replacement. Simply swap the `⁠fromFileSystem` loader that comes with the respective `⁠@effect/sql` database adapter for the `⁠fromArray` loader included in this package.
 
-```typescript
+```ts
 import { Config, Effect, Layer, pipe } from "effect";
 import { LibsqlClient, LibsqlMigrator } from "@effect/sql-libsql";
 import { NodeContext, NodeRuntime } from "@effect/platform-node";
@@ -77,4 +77,8 @@ const program = Effect.gen(function* () {
 pipe(program, Effect.provide(EnvLive), NodeRuntime.runMain);
 ```
 
-When your migrations are growing, you can separate them into their own files and import them accordingly in order to create the `migrations` array.
+As your migrations grow, you can separate them into their own files and import them to create the ⁠migrations array.
+
+## License
+
+MIT License
