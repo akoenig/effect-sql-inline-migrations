@@ -1,6 +1,6 @@
 {
   "name": "@akoenig/effect-sql-inline-migrations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "André König <hi@andrekoenig.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.11.1",

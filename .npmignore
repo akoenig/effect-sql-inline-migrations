@@ -9,3 +9,4 @@ flake.nix
 pnpm-lock.yaml
 *.db
 tsconfig.*
+!dist/
