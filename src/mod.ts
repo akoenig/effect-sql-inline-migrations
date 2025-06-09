@@ -5,7 +5,7 @@ import type { SqlError } from "@effect/sql/SqlError";
 import * as Option from "effect/Option";
 import { Effect } from "effect";
 
-interface Migration {
+export interface Migration {
   readonly name: string;
   readonly effect: Effect.Effect<
     readonly Sql.SqlConnection.Row[],
